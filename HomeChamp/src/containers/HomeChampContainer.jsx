@@ -4,7 +4,11 @@ import UserContainer from "./UserContainer";
 
 const HomeChampContainer = () => {
 
-
+const fetchUserData = async () => {
+    const response = await fetch("http://localhost:8080/users");
+    const userData = await response.json();
+    return userData;
+}
 
     return(
         <>
