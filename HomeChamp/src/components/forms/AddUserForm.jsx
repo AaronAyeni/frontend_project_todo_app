@@ -35,7 +35,7 @@ const preferenceOptions = (categoryData.map((preference,i)=>{
                 <input type = "number" id = "age" onChange={(event) => setAge(event.target.value)}  placeholder="Enter age of user"></input>
                 <label>preferences</label>
                 <select defaultValue = "select-preference" onChange = {(event) => setPreference(event.target.value)}>
-                    {/* <option disabled-value = "select-preference">Choose a preference</option> */}
+                    <option disabled-value = "select-preference">Choose a preference</option>
                     {preferenceOptions}
                 </select>
             </div>
