@@ -1,3 +1,4 @@
+import { useState } from "react";
 import HouseHoldContainer from "./HouseholdContainer";
 import TaskContainer from "./TaskContainers";
 import UserContainer from "./UserContainer";
@@ -5,11 +6,21 @@ import UserContainer from "./UserContainer";
 
 const HomeChampContainer = () => {
 
+
+const [userData, setUserData] = useState([]); 
+
+
+
+
 const fetchUserData = async () => {
     const response = await fetch("http://localhost:8080/users");
     const userData = await response.json();
-    return userData;
+    setUserData(userData);
 }
+
+// fetchUserData();
+console.log(userData);
+// console.log (fetchUserData ());
 
     return(
         <>
