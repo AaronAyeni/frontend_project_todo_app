@@ -1,10 +1,15 @@
-const User = ({userData}) => {
+const User = ({user}) => {
 
 
     return(
         <>
         <h3>This is a user component</h3>
-        <p> {userData[0].name}</p>
+        <ul>
+        <li>{user.name}</li>
+        <li>{user.age}</li>
+        <li>{user.preference}</li>
+        <li>{user.household.name}</li>
+        </ul>
         </>
         
     )

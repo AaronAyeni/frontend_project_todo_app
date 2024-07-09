@@ -2,13 +2,20 @@ import User from "../User"
 
 const UserList = ({userData}) => {
 
-return(
-<>
+const userComponents = userData.map( (user) => {
+        return(
+                <User user ={user} key={user.id}></User>
+        )
+}
 
-        <h2>This is the UserList</h2>
-        <User userData = {userData}></User>
+)
+        return(
+        <>
 
-</>
+                <h2>This is the UserList</h2>
+                {userComponents}
+
+        </>
 )
 
 }
