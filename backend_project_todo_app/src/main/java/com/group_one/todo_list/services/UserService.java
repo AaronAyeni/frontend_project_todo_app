@@ -7,9 +7,12 @@ import com.group_one.todo_list.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static com.group_one.todo_list.models.Category.COOKING;
+import static com.group_one.todo_list.models.Category.SHOPPING;
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
@@ -98,6 +101,18 @@ public class UserService {
         }
         userRepository.deleteById(id);
         return "User " + id + "ID deleted successfully.";
+    }
+
+    public List<Category> getAllCategories(){
+        List<Category> enumList = new ArrayList<>();
+        enumList.add(Category.CLEANING);
+        enumList.add(Category.COOKING);
+        enumList.add(Category.SHOPPING);
+        enumList.add(Category.HOOVERING);
+        enumList.add(Category.LAUNDRY);
+        enumList.add(Category.GARDENING);
+        return enumList;
+
     }
 
 
