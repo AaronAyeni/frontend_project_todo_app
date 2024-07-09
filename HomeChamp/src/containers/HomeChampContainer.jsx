@@ -11,6 +11,8 @@ const [userData, setUserData] = useState([]);
 
 const [categoryData, setCategoryData] = useState([]);
 
+const [householdData, setHouseholdData] = useState([]);
+
 
 const fetchUserData = async () => {
     const response = await fetch("http://localhost:8080/users");
@@ -25,6 +27,12 @@ const fetchCategories = async () => {
     // console.log("categories",categories);
 }
 
+const fetchHouseholdData = async () => {
+    const response = await fetch("http://localhost:8080/households");
+    const householdData = await response.json();
+    setHouseholdData(householdData);
+}
+
 // fetchUserData();
 // console.log(userData);
 // console.log(categoryData);
@@ -36,18 +44,20 @@ const fetchCategories = async () => {
         () => {
             fetchUserData();
             fetchCategories();
+            fetchHouseholdData();
         }, []
         
     );
 
 
+console.log(householdData);
 
     return(
         <>
         <h2>This is HomeChampContainer</h2>
         <TaskContainer></TaskContainer>
         <HouseHoldContainer></HouseHoldContainer>
-        <UserContainer userData ={userData} categoryData={categoryData} ></UserContainer>
+        <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} ></UserContainer>
         
         
         </>
