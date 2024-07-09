@@ -33,6 +33,24 @@ const fetchHouseholdData = async () => {
     setHouseholdData(householdData);
 }
 
+const postUser = async (newUser) => {
+   const response = await fetch("http://localhost:8080/users",{
+        method : "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(newUser)
+})
+    const savedUser = await response.json();
+    console.log(savedUser);
+    setUserData([savedUser, ...userData]);
+
+};
+
+
+
+
+
+
+
 // fetchUserData();
 // console.log(userData);
 // console.log(categoryData);
@@ -57,7 +75,7 @@ console.log(householdData);
         <h2>This is HomeChampContainer</h2>
         <TaskContainer></TaskContainer>
         <HouseHoldContainer></HouseHoldContainer>
-        <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} ></UserContainer>
+        <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} postUser = {postUser}></UserContainer>
         
         
         </>

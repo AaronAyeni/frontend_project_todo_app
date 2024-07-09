@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import User from "../User";
 
-const AddUserForm = ({userData, categoryData, householdData}) => {
+const AddUserForm = ({userData, categoryData, householdData,postUser}) => {
 
 const [name,setName]  = useState("");
 const [age,setAge] = useState(0);
@@ -11,9 +11,16 @@ const [householdId,setHouseholdId] = useState(null); //could have household stat
 
 
 const handleSubmit = (event) => {
+    console.log("is the form submitting")
     event.preventDefault();
+    const newUser = {
+        name,
+        age,
+        preference,
+        householdId
 
-
+    }
+    postUser(newUser);
 
 }
 
@@ -23,20 +30,20 @@ const preferenceOptions = (categoryData.map((preference,i)=>{
 
 
 const householdOptions = householdData.map((household) => {
-    return <option key={household.id} >{household.name}</option>
+    return <option key={household.id} value = {household.id}>{household.name}</option>
 });
- 
+
 
 
 
     return(
         <>
         <h2>This is a user form </h2>
-        <div className="userForm">
-            <form onSubmit={handleSubmit}></form>
-            <div>
+    
+            <form onSubmit={handleSubmit}>
+            
                 <label> name:</label>
-                <input type = "text" id = "name" onChange={(event) => setName(event.target.value)} placeholder="Enter name of user"></input>
+                <input type = "text" id = "name"  onChange={(event) => setName(event.target.value)} placeholder="Enter name of user"></input>
                 <label>age:</label>
                 <input type = "number" id = "age" onChange={(event) => setAge(event.target.value)}  placeholder="Enter age of user"></input>
                 <label>preferences</label>
@@ -48,11 +55,16 @@ const householdOptions = householdData.map((household) => {
                     <option disabled-value = "select-household">Choose a household</option>
                     {householdOptions}
                 </select>
-            </div>
+                <input type="submit" value = "Add User"/>
 
+             </form>
 
+           
+        
 
-        </div>
+            
+
+        
 
 
 
