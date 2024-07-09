@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HouseHoldContainer from "./HouseholdContainer";
 import TaskContainer from "./TaskContainers";
 import UserContainer from "./UserContainer";
@@ -8,8 +8,6 @@ const HomeChampContainer = () => {
 
 
 const [userData, setUserData] = useState([]); 
-
-
 
 
 const fetchUserData = async () => {
@@ -22,12 +20,23 @@ const fetchUserData = async () => {
 console.log(userData);
 // console.log (fetchUserData ());
 
+
+
+    useEffect(
+        () => {
+            fetchUserData();
+        }, []
+        
+    );
+
+
+
     return(
         <>
         <h2>This is HomeChampContainer</h2>
         <TaskContainer></TaskContainer>
         <HouseHoldContainer></HouseHoldContainer>
-        <UserContainer></UserContainer>
+        <UserContainer userData ={userData}></UserContainer>
         
         
         </>

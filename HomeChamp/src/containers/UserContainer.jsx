@@ -2,7 +2,7 @@ import User from "../components/User";
 import AddUserForm from "../components/forms/AddUserForm";
 import UserList from "../components/lists/UserList";
 
-const UserContainer = () => {
+const UserContainer = ({userData}) => {
 
     return(
         <>
@@ -10,9 +10,9 @@ const UserContainer = () => {
         <h2>This is UserContainer</h2>
         
         <AddUserForm></AddUserForm>
-        <UserList></UserList>
+        <UserList userData ={userData}></UserList>
 
-            
+
         </>
     )
 } 

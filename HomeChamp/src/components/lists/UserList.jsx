@@ -1,12 +1,12 @@
 import User from "../User"
 
-const UserList = () => {
+const UserList = ({userData}) => {
 
 return(
 <>
 
         <h2>This is the UserList</h2>
-        <User></User>
+        <User userData = {userData}></User>
 
 </>
 )
