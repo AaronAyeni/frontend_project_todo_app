@@ -9,7 +9,7 @@ const UserContainer = ({userData}) => {
 
         <h2>This is UserContainer</h2>
         
-        <AddUserForm></AddUserForm>
+        <AddUserForm userData={userData}></AddUserForm>
         <UserList userData ={userData}></UserList>
 
 
