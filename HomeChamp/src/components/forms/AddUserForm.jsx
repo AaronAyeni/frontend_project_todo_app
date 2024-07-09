@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import User from "../User";
 
-const AddUserForm = ({userData, categoryData}) => {
+const AddUserForm = ({userData, categoryData, householdData}) => {
 
 const [name,setName]  = useState("");
 const [age,setAge] = useState(0);
 const [preference,setPreference] = useState(null);
-const [householdId,setHousehold] = useState(null); //could have household state be an empty object 
+const [householdId,setHouseholdId] = useState(null); //could have household state be an empty object 
 
 
 
@@ -18,8 +18,14 @@ const handleSubmit = (event) => {
 }
 
 const preferenceOptions = (categoryData.map((preference,i)=>{
-    return <option key = {i} value = {preference}> {preference} </option>
+    return <option key = {i}> {preference} </option>
 }));
+
+
+const householdOptions = householdData.map((household) => {
+    return <option key={household.id} >{household.name}</option>
+});
+ 
 
 
 
@@ -37,6 +43,10 @@ const preferenceOptions = (categoryData.map((preference,i)=>{
                 <select defaultValue = "select-preference" onChange = {(event) => setPreference(event.target.value)}>
                     <option disabled-value = "select-preference">Choose a preference</option>
                     {preferenceOptions}
+                </select>
+                <select defaultValue = "select-household" onChange = {(event) => setHouseholdId(event.target.value)}>
+                    <option disabled-value = "select-household">Choose a household</option>
+                    {householdOptions}
                 </select>
             </div>
 
