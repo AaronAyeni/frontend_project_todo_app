@@ -9,6 +9,8 @@ const HomeChampContainer = () => {
 
 const [userData, setUserData] = useState([]); 
 
+const [categoryData, setCategoryData] = useState([]);
+
 
 const fetchUserData = async () => {
     const response = await fetch("http://localhost:8080/users");
@@ -16,8 +18,15 @@ const fetchUserData = async () => {
     setUserData(userData);
 }
 
+const fetchCategories = async () => {
+    const response = await fetch("http://localhost:8080/preferences");
+    const categories = await response.json();
+    setCategoryData(categories);
+}
+
 // fetchUserData();
 console.log(userData);
+console.log(categoryData);
 // console.log (fetchUserData ());
 
 
@@ -25,6 +34,7 @@ console.log(userData);
     useEffect(
         () => {
             fetchUserData();
+            fetchCategories();
         }, []
         
     );
