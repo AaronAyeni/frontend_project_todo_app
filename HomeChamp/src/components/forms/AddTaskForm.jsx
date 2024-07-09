@@ -6,9 +6,7 @@ const addTaskForm = () => {
     return(
 
         <>
-        <h3>This is a task form</h3>
-        <Task></Task>
-        
+        <h2>This is a task form</h2> 
         </>
     )
 }

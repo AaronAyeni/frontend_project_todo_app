@@ -5,8 +5,7 @@ const AddUserForm = () => {
 
     return(
         <>
-        <h3>This is a user form </h3>
-     
+        <h2>This is a user form </h2>
         </>
     )
 }
