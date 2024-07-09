@@ -1,6 +1,15 @@
 import Household from "../Household"
 
-const HouseholdList = () => {
+const HouseholdList = ({householdData}) => {
+
+const householdComponents = householdData.map( (household) => {
+    return(
+        <Household household ={household} key ={household.id}></Household>
+    )
+
+}
+
+)    
 
 
 
@@ -9,7 +18,7 @@ const HouseholdList = () => {
     return(
         <>
         <h2>This is household list</h2>
-        <Household></Household>
+        {householdComponents}
         
         </>
     )
