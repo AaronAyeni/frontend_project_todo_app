@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import User from "../User";
 
-const AddUserForm = ({userData}) => {
+const AddUserForm = ({userData, categoryData}) => {
 
 const [name,setName]  = useState("");
 const [age,setAge] = useState(0);
-const [preferenceId,setPreference] = useState(null);
+const [preference,setPreference] = useState(null);
 const [householdId,setHousehold] = useState(null); //could have household state be an empty object 
-
 
 
 
@@ -18,16 +17,16 @@ const handleSubmit = (event) => {
 
 }
 
-// const preferenceOptions = (preference.map((preference)=>{
-//     return <option key = {preference.id} value = {preference.id}></option>
-// }));
+const preferenceOptions = (categoryData.map((preference,i)=>{
+    return <option key = {i} value = {preference}> {preference} </option>
+}));
 
 
 
     return(
         <>
         <h2>This is a user form </h2>
-        {/* <div className="userForm">
+        <div className="userForm">
             <form onSubmit={handleSubmit}></form>
             <div>
                 <label> name:</label>
@@ -35,8 +34,8 @@ const handleSubmit = (event) => {
                 <label>age:</label>
                 <input type = "number" id = "age" onChange={(event) => setAge(event.target.value)}  placeholder="Enter age of user"></input>
                 <label>preferences</label>
-                <select defaultValue = "select-preference" onChange = {(event) => setPreferenceId(event.target.value)}>
-                    <option disabled-value = "select-preference">Choose a preference</option>
+                <select defaultValue = "select-preference" onChange = {(event) => setPreference(event.target.value)}>
+                    {/* <option disabled-value = "select-preference">Choose a preference</option> */}
                     {preferenceOptions}
                 </select>
             </div>
@@ -44,7 +43,7 @@ const handleSubmit = (event) => {
 
 
         </div>
- */}
+
 
 
 

@@ -22,11 +22,12 @@ const fetchCategories = async () => {
     const response = await fetch("http://localhost:8080/preferences");
     const categories = await response.json();
     setCategoryData(categories);
+    // console.log("categories",categories);
 }
 
 // fetchUserData();
-console.log(userData);
-console.log(categoryData);
+// console.log(userData);
+// console.log(categoryData);
 // console.log (fetchUserData ());
 
 
@@ -46,7 +47,7 @@ console.log(categoryData);
         <h2>This is HomeChampContainer</h2>
         <TaskContainer></TaskContainer>
         <HouseHoldContainer></HouseHoldContainer>
-        <UserContainer userData ={userData}></UserContainer>
+        <UserContainer userData ={userData} categoryData={categoryData} ></UserContainer>
         
         
         </>
