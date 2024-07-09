@@ -74,7 +74,7 @@ console.log(householdData);
         <>
         <h2>This is HomeChampContainer</h2>
         <TaskContainer></TaskContainer>
-        <HouseHoldContainer></HouseHoldContainer>
+        <HouseHoldContainer householdData = {householdData}></HouseHoldContainer>
         <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} postUser = {postUser}></UserContainer>
         
         
