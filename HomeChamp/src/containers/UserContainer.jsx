@@ -1,13 +1,16 @@
 import User from "../components/User";
 import AddUserForm from "../components/forms/AddUserForm";
 
-const UserContainer = () => {
+const UserContainer = (props) => {
 
     return(
         <>
+
         <h2>This is UserContainer</h2>
         
-        <AddUserForm></AddUserForm>
+        <AddUserForm userData = {props}></AddUserForm>
+
+            
         </>
     )
 } 
