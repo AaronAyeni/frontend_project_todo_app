@@ -10,7 +10,7 @@ const Task = ({task}) => {
           <li>{task.dueDate}</li>
           <li>{task.category}</li>
           <li>{task.status}</li>
-          <li>{task.user == null ? "no user associated with task" : task.user} </li>  
+          <li>{task.user == null ? "no user associated with task" : task.user.name} </li>  
 
 
         </ul>
