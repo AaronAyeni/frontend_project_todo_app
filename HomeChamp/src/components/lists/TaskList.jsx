@@ -1,10 +1,10 @@
 import Task from "../Task"
 
-const TaskList = ({taskData}) => {
+const TaskList = ({taskData,updateStatus}) => {
 
     const taskComponents = taskData.map( (task) => {
         return(
-            <Task task ={task} key ={task.id}></Task>
+            <Task task ={task} updateStatus = {updateStatus} key ={task.id}></Task>
         )
     })
 
