@@ -155,19 +155,23 @@ public class TaskService {
         // the taskId is the id of the task you want to update
         // the taskDTO contains the status you want to update to
         Optional<Task> taskOptional = taskRepository.findById(taskId);
-        if (taskOptional.isEmpty()) {
-            return null;
-        }
-
+//        if (taskOptional.isEmpty()) {
+//            return null;
+//        }
+//
         Task task = taskOptional.get();
-        if(task.getUser() == null){
-            return null;
-        }
-        if (task.getHousehold().getId() == task.getUser().getHousehold().getId()) {
+//        if(task.getUser() == null){
+//            return null;
+//        }
+//        if (task.getHousehold().getId() == task.getUser().getHousehold().getId()) {
+//            task.setStatus(taskDTO.getStatus());
+//            return taskRepository.save(task);
+//        }
+
             task.setStatus(taskDTO.getStatus());
             return taskRepository.save(task);
-        }
-        return null;
+
+//        return null;
     }
 
     public String deleteTask (long taskId, Long userId) {
