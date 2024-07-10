@@ -72,17 +72,19 @@ useEffect(
             <label> description:</label>
 
             <input type = "text"  onChange={(event) => setDescription(event.target.value)} placeholder="Enter name of description"></input>
+            <label> deadline:</label>
             <input type = "date"  onChange={(event) => setDuedate(event.target.value)} placeholder="Enter name of date of format YYYY-MM-DD"></input>
-           
+            <label> category:</label>
             <select defaultValue = "catergory" value = {category} onChange = {(event) => setCategory(event.target.value)}>
                 <option disabled-value = "select-catergory">Choose a Catergory</option>
                 {preferenceOptions}
             </select>
+            <label> household:</label>
             <select defaultValue = "select-household" value = {householdId} onChange = {(event) => setHouseholdId(event.target.value)}>
                 <option disabled-value = "select-household">Choose a household</option>
                 {householdOptions}
             </select>
-
+            <label> status:</label>
             <select defaultValue = "select-status" value = {status} onChange = {(event) => setStatus(event.target.value)}>
                 <option disabled-value = "select-status">Choose a status</option>
                 <option value = {status}>NOT_STARTED</option>
@@ -92,7 +94,7 @@ useEffect(
             </select>
             
 
-
+            <label> assign to:</label>
             <select defaultValue = "select-user" onChange = {(event) => setUserId(event.target.value)}>
                 <option disabled-value = "select-user">Choose a user</option>
                 { householdUsers.map((user) => {
