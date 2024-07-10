@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Task = ({task,updateStatus}) => {
+const Task = ({task,updateStatus, deleteTask}) => {
 
   console.log(task);
 
@@ -16,7 +16,9 @@ const Task = ({task,updateStatus}) => {
   const id = task.id
 
 
-
+  const handleButtonClick = () => {
+    deleteTask(task)
+}
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -57,6 +59,8 @@ const Task = ({task,updateStatus}) => {
           </select>
           <input type="submit" value = "Choose status"/> 
           </form>
+          <button onClick={handleButtonClick}>Delete</button>
+
 
         </ul>
         </>
