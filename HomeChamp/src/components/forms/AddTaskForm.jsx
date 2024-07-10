@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import Task from "../Task";
 
-const AddTaskForm = ({taskData, categoryData}) => {
+const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask}) => {
 
 
-const [description,setdescription]  = useState("");
-const [householdName,setHouseholdName] = useState(null); 
+const [description,setDescription]  = useState("");
+const [householdId,setHouseholdId] = useState(null); 
 const [dueDate,setDuedate] = useState(0);
 const [category,setCategory] = useState(null); 
 const [status,setStatus] = useState(null); 
-const [userName,setuserName] = useState(null); 
+const [userId,setUserId] = useState(null); 
+
+const [householdUsers, setHouseholdUsers] = useState([]);
 
 
 const handleSubmit = (event) => {
@@ -17,15 +19,15 @@ const handleSubmit = (event) => {
     event.preventDefault();
     const newTask = {
         description,
-        householdName,
+        householdId,
         dueDate,
         category,
         status,
-        userName
+        userId
 
 
     }
-    postUser(newTask);
+    postTask(newTask);
 
 }
 
@@ -34,37 +36,71 @@ const preferenceOptions = (categoryData.map((preference,i)=>{
     return <option key = {i}> {preference} </option>
 }));
 
+const householdOptions = householdData.map((household) => {
+    return <option key={household.id} value = {household.id}>{household.name}</option>
+});
+
+
+
+
+
+const assignUserOptions = () => {
+    const houseObject = householdData.find(household => household.id == householdId);
+    if(houseObject){
+
+    
+    const userArray = houseObject.users;
+    setHouseholdUsers(userArray); 
+    }
+}
+
+
+useEffect(
+    assignUserOptions,[householdId]
+);
+
+
+
 
     return(
 
         <>
         <h2>This is a task form</h2> 
-        <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit}>
             
             <label> description:</label>
 
-            <input type = "text"  onChange={(event) => setName(event.target.value)} placeholder="Enter name of description"></input>
+            <input type = "text"  onChange={(event) => setDescription(event.target.value)} placeholder="Enter name of description"></input>
+            <input type = "date"  onChange={(event) => setDuedate(event.target.value)} placeholder="Enter name of date of format YYYY-MM-DD"></input>
            
-            <select defaultValue = "catergory" onChange = {(event) => setCategory(event.target.value)}>
+            <select defaultValue = "catergory" value = {category} onChange = {(event) => setCategory(event.target.value)}>
                 <option disabled-value = "select-catergory">Choose a Catergory</option>
                 {preferenceOptions}
             </select>
-
-
-            <select defaultValue = "select-preference" onChange = {(event) => setPreference(event.target.value)}>
-                <option disabled-value = "select-preference">Choose a preference</option>
-                {preferenceOptions}
-            </select>
-
-
-            <select defaultValue = "select-preference" onChange = {(event) => setPreference(event.target.value)}>
-                <option disabled-value = "select-preference">Choose a preference</option>
-                {preferenceOptions}
-            </select>
-            <select defaultValue = "select-household" onChange = {(event) => setHouseholdId(event.target.value)}>
+            <select defaultValue = "select-household" value = {householdId} onChange = {(event) => setHouseholdId(event.target.value)}>
                 <option disabled-value = "select-household">Choose a household</option>
                 {householdOptions}
             </select>
+
+            <select defaultValue = "select-status" value = {status} onChange = {(event) => setStatus(event.target.value)}>
+                <option disabled-value = "select-status">Choose a status</option>
+                <option value = {status}>NOT_STARTED</option>
+                <option value = {status}>IN_PROGRESS</option>
+                <option value = {status}>COMPLETED</option>
+                
+            </select>
+            
+
+
+            <select defaultValue = "select-user" onChange = {(event) => setUserId(event.target.value)}>
+                <option disabled-value = "select-user">Choose a user</option>
+                { householdUsers.map((user) => {
+        return <option key = {user.id} value = {user.id}>{user.name}</option>
+    })}
+            </select>
+
+
+           
             <input type="submit" value = "Add Task"/> 
 
           </form>

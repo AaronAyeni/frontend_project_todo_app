@@ -13,7 +13,7 @@ const [categoryData, setCategoryData] = useState([]);
 
 const [householdData, setHouseholdData] = useState([]);
 
-const [taskData, settaskData] = useState([]);
+const [taskData, setTaskData] = useState([]);
 
 
 
@@ -39,7 +39,7 @@ const fetchHouseholdData = async () => {
 const fetchTaskData = async () => {
     const response = await fetch("http://localhost:8080/tasks");
     const taskData = await response.json();
-    settaskData(taskData);
+    setTaskData(taskData);
 }
 
 console.log(taskData)
@@ -70,6 +70,21 @@ const postHousehold = async (newHousehold) => {
      setHouseholdData([savedHousehold, ...householdData]);
  
  };
+
+const postTask = async (newTask) => {
+    const response = await fetch("http://localhost:8080/tasks",{
+        method : "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(newTask)
+
+
+    }
+
+)
+    const savedTask = await response.json();
+    setTaskData([savedTask,...taskData]);
+
+}
  
 
 
@@ -99,7 +114,7 @@ console.log(householdData);
     return(
         <>
         <h2>This is HomeChampContainer</h2>
-        <TaskContainer taskData = {taskData} categoryData={categoryData} ></TaskContainer>
+        <TaskContainer taskData = {taskData} categoryData={categoryData} householdData={householdData} userData ={userData} postTask = {postTask}></TaskContainer>
         <HouseHoldContainer householdData = {householdData} postHousehold = {postHousehold}></HouseHoldContainer>
         <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} postUser = {postUser}></UserContainer>
         

@@ -1,7 +1,7 @@
 import React from 'react';
 const Household = ({ household }) => {
 
-  let statementCheck = household 
+
   if(household.users == null){
     console.log("no users found");
   }
