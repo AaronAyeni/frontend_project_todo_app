@@ -99,7 +99,7 @@ console.log(householdData);
     return(
         <>
         <h2>This is HomeChampContainer</h2>
-        <TaskContainer taskData = {taskData}></TaskContainer>
+        <TaskContainer taskData = {taskData} categoryData={categoryData} ></TaskContainer>
         <HouseHoldContainer householdData = {householdData} postHousehold = {postHousehold}></HouseHoldContainer>
         <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} postUser = {postUser}></UserContainer>
         
