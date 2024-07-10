@@ -100,16 +100,16 @@ public class TaskController {
 
     //  localhost:8080/tasks/delete-task/1                 the payload will just be 2 for userId 2
     @DeleteMapping(value = "/delete-task/{taskId}") // localhost:8080/delete-task/{taskId}
-    public ResponseEntity<String> deleteTask(@PathVariable long taskId, @RequestBody Long userId) {
-        String message = taskService.deleteTask(taskId, userId);
+    public ResponseEntity<Long> deleteTask(@PathVariable long taskId, @RequestBody Long userId) {
+        taskService.deleteTask(taskId, userId);
 
-        if (message.equals("User does not have permission to delete")) {
-            return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
-        } else if (message.equals("Invalid task Id or user Id")) {
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
-        }
+//        if (message.equals("User does not have permission to delete")) {
+//            return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
+//        } else if (message.equals("Invalid task Id or user Id")) {
+//            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+//        }
 
-        return new ResponseEntity<>(message, HttpStatus.OK);
+        return new ResponseEntity<>(taskId, HttpStatus.OK);
     }
 
 }
