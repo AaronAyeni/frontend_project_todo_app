@@ -87,26 +87,45 @@ const postTask = async (newTask) => {
 
     }
 
+
 )
-    const savedTask = await response.json();
+const savedTask = await response.json();
 
-    const patchReponse = await fetch(`http://localhost:8080/tasks/assign-task-by-user/${savedTask.id}`,{
-        method : "PATCH",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-            assigningUserId : 9,
-            userReceivingTaskId : newTask.userId
-        })
+const patchReponse = await fetch(`http://localhost:8080/tasks/assign-task-by-user/${savedTask.id}`,{
+    method : "PATCH",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+        assigningUserId : 9,
+        userReceivingTaskId : newTask.userId
     })
+})
 
-    const savedUserToTask = await patchReponse.json();
+const savedUserToTask = await patchReponse.json();
 
 
 
-    setTaskData([savedUserToTask,...taskData]);
+setTaskData([savedUserToTask,...taskData]);
 
 }
 
+
+
+
+const deleteTask = async (taskToDelete) => {
+    const response = await fetch(`http://localhost:8080/tasks/delete-task/${taskToDelete.id}`,{
+        method : "DELETE",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            userId : 9
+        })
+
+
+    })
+    await fetchTaskData();
+};
+
+
+   
 const updateStatus = async (taskToUpdateStatus) => {
     const response = await fetch(`http://localhost:8080/tasks/update-status/${taskToUpdateStatus.id}`,{
     method : "PATCH",
@@ -172,6 +191,7 @@ const updateStatus = async (taskToUpdateStatus) => {
                     userData ={userData} 
                     postTask = {postTask}
                     updateStatus = {updateStatus}
+                    deleteTask ={deleteTask}
                         />
                 },
                 {
@@ -184,6 +204,7 @@ const updateStatus = async (taskToUpdateStatus) => {
                 }
             ]
         }
+        
     ])
 
 
@@ -202,6 +223,6 @@ const updateStatus = async (taskToUpdateStatus) => {
     )
 
 
-}
+};
 
 export default HomeChampContainer;
