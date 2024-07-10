@@ -2,7 +2,7 @@ import Task from "../components/Task";
 import AddTaskForm from "../components/forms/AddTaskForm";
 import TaskList from "../components/lists/TaskList";
 
-const TaskContainer = () => {
+const TaskContainer = ({taskData}) => {
 
 
 
@@ -13,7 +13,7 @@ const TaskContainer = () => {
         <>
         <h2>This is TaskContainer</h2>
         <AddTaskForm></AddTaskForm>
-        <TaskList></TaskList>
+        <TaskList taskData={taskData}></TaskList>
         </>
     )
 }
