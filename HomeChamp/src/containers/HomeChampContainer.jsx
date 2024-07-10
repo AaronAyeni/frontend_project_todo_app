@@ -121,6 +121,8 @@ const deleteTask = async (taskToDelete) => {
 
 
     })
+    console.log(response);
+    console.log("delete request")
     await fetchTaskData();
 };
 
