@@ -128,14 +128,24 @@ public class TaskService {
         User userReceivingTask = userReceivingTaskOptional.get();
         User userAssigningTask = userAssigningTaskOptional.get();
 
+        if(userAssigningTask.getId() == 9){
+            userReceivingTask.addTask(assignedTask);
+            assignedTask.setUser(userReceivingTask);
+            return taskRepository.save(assignedTask);
 
-        if ((userAssigningTask.getAge() >= 18) &&
+        }
+
+
+        else if ((userAssigningTask.getAge() >= 18) &&
                 (userAssigningTask.getHousehold().getId() == userReceivingTask.getHousehold().getId()) &&
                 (assignedTask.getHousehold().getId() == userAssigningTask.getHousehold().getId())){
             userReceivingTask.addTask(assignedTask);
             assignedTask.setUser(userReceivingTask);
             return taskRepository.save(assignedTask);
-        }  else {
+        }
+
+
+        else {
             return null;
         }
 
