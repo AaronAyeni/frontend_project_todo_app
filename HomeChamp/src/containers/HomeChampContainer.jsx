@@ -5,6 +5,7 @@ import UserContainer from "./UserContainer";
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import UserList from "../components/lists/UserList";
 import Navigation from "../components/Navigation";
+import Home from "../components/Home";
 
 
 
@@ -135,6 +136,10 @@ const postTask = async (newTask) => {
             path: "/",
             element: <Navigation />,
             children: [
+                { path: "/",
+                     element: <Home 
+                     /> 
+                }, 
                 {
                     path: "/users",
                     element: <UserContainer
