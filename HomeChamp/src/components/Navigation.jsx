@@ -6,6 +6,7 @@ const Navigation = () => {
                 <h2>HomeChamp NavBar</h2>
                 <nav>
                     <ul>
+                        <li><Link to="/">Home</Link></li>
                         <li><Link to="/users">All users</Link></li>
                         <li><Link to="/households">Add households</Link></li>
                         <li><Link to="/tasks">Add tasks</Link></li>
