@@ -174,16 +174,16 @@ public class TaskService {
 //        return null;
     }
 
-    public String deleteTask (long taskId, Long userId) {
+    public String deleteTask (long taskId) {
         Optional<Task> taskOptional = taskRepository.findById(taskId);
-        Optional<User> userOptional = userRepository.findById(userId);
+//        Optional<User> userOptional = userRepository.findById(userId);
 
 //        if (taskOptional.isEmpty() || userOptional.isEmpty()) {
 //            return "Invalid task Id or user Id";
 //        }
 
         Task task = taskOptional.get();
-        User user = userOptional.get();
+//        User user = userOptional.get();
 
 
 //        if (user.getHousehold().getId() == task.getHousehold().getId() && user.getAge() >= 18) {
