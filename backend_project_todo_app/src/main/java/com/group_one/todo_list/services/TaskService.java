@@ -178,19 +178,25 @@ public class TaskService {
         Optional<Task> taskOptional = taskRepository.findById(taskId);
         Optional<User> userOptional = userRepository.findById(userId);
 
-        if (taskOptional.isEmpty() || userOptional.isEmpty()) {
-            return "Invalid task Id or user Id";
-        }
+//        if (taskOptional.isEmpty() || userOptional.isEmpty()) {
+//            return "Invalid task Id or user Id";
+//        }
 
         Task task = taskOptional.get();
         User user = userOptional.get();
 
 
-        if (user.getHousehold().getId() == task.getHousehold().getId() && user.getAge() >= 18) {
+//        if (user.getHousehold().getId() == task.getHousehold().getId() && user.getAge() >= 18) {
+//            taskRepository.deleteById(taskId);
+//            return "Task " + taskId + "ID deleted successfully.";
+//        }
+
             taskRepository.deleteById(taskId);
             return "Task " + taskId + "ID deleted successfully.";
-        }
-        return "User does not have permission to delete";
+
+//        return "User does not have permission to delete";
+
+
     }
 
     public List<Task> getTasksByHousehold (long householdId) {
