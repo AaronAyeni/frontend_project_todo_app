@@ -59,6 +59,7 @@ const postUser = async (newUser) => {
 
 
 const postHousehold = async (newHousehold) => {
+    console.log("new household:", newHousehold);
     const response = await fetch("http://localhost:8080/households",{
          method : "POST",
          headers: {"Content-Type":"application/json"},
