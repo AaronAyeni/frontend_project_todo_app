@@ -27,7 +27,7 @@ public class Household {
     }
 
     public Household(){
-
+        this.users = new ArrayList<>();
     }
 
     public long getId() {
