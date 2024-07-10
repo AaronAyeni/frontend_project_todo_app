@@ -44,6 +44,8 @@ const fetchHouseholdData = async () => {
 const fetchTaskData = async () => {
     const response = await fetch("http://localhost:8080/tasks");
     const taskData = await response.json();
+
+
     setTaskData(taskData);
 }
 
@@ -105,6 +107,18 @@ const postTask = async (newTask) => {
 
 }
 
+const updateStatus = async (taskToUpdateStatus) => {
+    const response = await fetch(`http://localhost:8080/tasks/update-status/${taskToUpdateStatus.id}`,{
+    method : "PATCH",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify(taskToUpdateStatus)
+})
+   await fetchTaskData();
+
+}
+
+
+
 
 //patch mapping 
  
@@ -157,6 +171,7 @@ const postTask = async (newTask) => {
                     householdData={householdData} 
                     userData ={userData} 
                     postTask = {postTask}
+                    updateStatus = {updateStatus}
                         />
                 },
                 {
