@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import HouseHoldContainer from "./HouseholdContainer";
 import TaskContainer from "./TaskContainers";
 import UserContainer from "./UserContainer";
+import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
+import UserList from "../components/lists/UserList";
+import Navigation from "../components/Navigation";
+
 
 
 const HomeChampContainer = () => {
@@ -126,16 +130,54 @@ const postTask = async (newTask) => {
     );
 
 
-console.log(householdData);
+    const homechampRoutes = createBrowserRouter([
+        {
+            path: "/",
+            element: <Navigation />,
+            children: [
+                {
+                    path: "/users",
+                    element: <UserContainer
+                    userData ={userData} 
+                    categoryData={categoryData} 
+                    householdData={householdData} 
+                    postUser = {postUser}
+                        />
+                },
+                {
+                    path: "/tasks",
+                    element: <TaskContainer
+                    taskData = {taskData} 
+                    categoryData={categoryData} 
+                    householdData={householdData} 
+                    userData ={userData} 
+                    postTask = {postTask}
+                        />
+                },
+                {
+                    path: "/households",
+                    // loader: chocolateLoader,
+                    element: <HouseHoldContainer
+                    householdData = {householdData} 
+                    postHousehold = {postHousehold}
+                        />
+                }
+            ]
+        }
+    ])
+
+
+    
+
+    
+
+
 
     return(
         <>
-        <h2>This is HomeChampContainer</h2>
-        <TaskContainer taskData = {taskData} categoryData={categoryData} householdData={householdData} userData ={userData} postTask = {postTask}></TaskContainer>
-        <HouseHoldContainer householdData = {householdData} postHousehold = {postHousehold}></HouseHoldContainer>
-        <UserContainer userData ={userData} categoryData={categoryData} householdData={householdData} postUser = {postUser}></UserContainer>
-        
-        
+  
+        <RouterProvider router={homechampRoutes}/>
+
         </>
     )
 

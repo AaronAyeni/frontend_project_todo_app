@@ -10,6 +10,7 @@ const [householdId,setHouseholdId] = useState(null);
 
 
 
+
 const handleSubmit = (event) => {
     console.log("is the form submitting")
     event.preventDefault();
@@ -23,6 +24,7 @@ const handleSubmit = (event) => {
     postUser(newUser);
 
 }
+
 
 const preferenceOptions = (categoryData.map((preference,i)=>{
     return <option key = {i}> {preference} </option>
