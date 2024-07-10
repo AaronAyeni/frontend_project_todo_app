@@ -1,5 +1,11 @@
 import React from 'react';
 const Household = ({ household }) => {
+
+  let statementCheck = household 
+  if(household.users == null){
+    console.log("no users found");
+  }
+
   console.log(household);
   return (
     <>
@@ -7,17 +13,12 @@ const Household = ({ household }) => {
       <ul>
         <li>{household.name}</li>
         <p>Users in this household</p>
-        <li>
-          {household && household.users
-            ? household.users.map((user, index) => (
-                <span key={index}>{user.name} </span>
-              ))
-            : "No users"}
-        </li>
+        <li>{household.users.map( (user) => {return user.name + " "})}</li>
       </ul>
     </>
   );
 }
+
 export default Household;
 
 

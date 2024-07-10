@@ -6,7 +6,7 @@ const AddUserForm = ({userData, categoryData, householdData,postUser}) => {
 const [name,setName]  = useState("");
 const [age,setAge] = useState(0);
 const [preference,setPreference] = useState(null);
-const [householdId,setHouseholdId] = useState(null); //could have household state be an empty object 
+const [householdId,setHouseholdId] = useState(null); 
 
 
 
