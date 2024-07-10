@@ -82,9 +82,26 @@ const postTask = async (newTask) => {
 
 )
     const savedTask = await response.json();
-    setTaskData([savedTask,...taskData]);
+
+    const patchReponse = await fetch(`http://localhost:8080/tasks/assign-task-by-user/${savedTask.id}`,{
+        method : "PATCH",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            assigningUserId : 9,
+            userReceivingTaskId : newTask.userId
+        })
+    })
+
+    const savedUserToTask = await patchReponse.json();
+
+
+
+    setTaskData([savedUserToTask,...taskData]);
 
 }
+
+
+//patch mapping 
  
 
 
