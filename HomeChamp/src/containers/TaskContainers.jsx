@@ -30,10 +30,7 @@ const TaskContainer = ({taskData, categoryData,householdData,userData,postTask,u
             break;
             }
         }
-        // const onTaskFilterChangeCategory = (searchTermTaskCategory) => {
-        //     const filteredTasks = taskData.filter(task => task.category.toLowerCase().includes(searchTermTaskCategory.toLowerCase()))
-        //     setFilteredTasks(filteredTasks);
-        // }
+     
     return(
         <>
         <AddTaskForm categoryData={categoryData} householdData = {householdData} userData ={userData} postTask = {postTask} onFilterChange ={onTaskFilterChange}></AddTaskForm>

@@ -3,6 +3,8 @@ import '/src/styles/AddTaskForm.css';
 
 import Task from "../Task";
 const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask,onFilterChange}) => {
+
+
 const [description,setDescription]  = useState("");
 const [householdId,setHouseholdId] = useState(null);
 const [dueDate,setDuedate] = useState(0);
@@ -10,12 +12,16 @@ const [category,setCategory] = useState(null);
 const [status,setStatus] = useState(null);
 const [userId,setUserId] = useState(null);
 const [householdUsers, setHouseholdUsers] = useState([]);
+
+
 const [descriptionSearchTerm,setDescriptionSeachTerm] = useState("");
 const [categorySearchTerm,setCategorySeachTerm] = useState("");
 const [statusSearchTerm,setStatusSearchTerm] = useState("");
 const [householdSearchTerm,setHouseholdSearchTerm] = useState("");
 const [dueDateSearchTerm,setDueDateSearchTerm] = useState(null);
 const [assignedUserSearchTerm,setAssignedUserSearchTerm] = useState("");
+
+
 const handleSubmit = (event) => {
     console.log("is the form submitting")
     event.preventDefault();

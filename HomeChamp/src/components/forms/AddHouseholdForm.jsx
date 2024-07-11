@@ -26,7 +26,7 @@ const AddHouseholdForm = ({householdData, postHousehold, onFilterChange}) => {
 
                 <h3>Add a Household</h3>
 
-<div className="cream-box"> {/* Apply CSS class for cream-colored box */}
+<div className="cream-box"> 
             <form onSubmit={handleSubmit}>
                 <label htmlFor="household-name">Household Name:</label>
                 <input
@@ -35,9 +35,9 @@ const AddHouseholdForm = ({householdData, postHousehold, onFilterChange}) => {
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                     placeholder="Enter name of household"
-                    className="input-field" // Apply CSS class for input field styling
+                    className="input-field" 
                 />
-                <input type="submit" value="Add household" className="submit-btn" /> {/* Apply CSS class for submit button styling */}
+                <input type="submit" value="Add household" className="submit-btn" /> 
             </form>
             <div>
                 <label>Filter by Name:</label>

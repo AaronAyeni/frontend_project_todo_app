@@ -11,7 +11,7 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
   
    
-    // const toggleStatus = () => { setStatus((prevStatus) => { switch (prevStatus) { case 'NOT_COMPLETED': return 'IN_PROGRESS'; case 'IN_PROGRESS': return 'COMPLETED'; case 'COMPLETED': default: return 'NOT_COMPLETED'; } });
+   
   const [status,setStatus] = useState(null);
   const [userId,setUserId] = useState(null);
 
@@ -25,7 +25,7 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
   const householdId = task.household.id;
   const id = task.id
   
-  // const userId = task.user; //add the .id after
+ 
   
 
   const handleButtonClick = () => {
@@ -74,10 +74,9 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
  
 
   const assignUserOptions = () => {
-    console.log("this is householdId",householdId);
-    // console.log("this is household data in task component",householdData);
+    
     const houseHoldWeWant = householdData.find((household) => household.id === householdId);
-   //below is a guard clause so once we have the data itll will activate the true return which causes the re render.
+   
     if(houseHoldWeWant === undefined){
       return <></>
     }
@@ -94,10 +93,6 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 }
 
 
-// useEffect(
-
-//   assignUserOptions,[]
-// );
 
 
 
