@@ -11,6 +11,12 @@
     margin: 0 auto; /* Center align horizontally */
 }
 
+.cream-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px; /* Adjust label font size */
+}
+
 .input-field,
 .select-field {
     width: 100%;
@@ -18,19 +24,22 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px; /* Adjust input field font size */
 }
 
-.submit-btn {
-    background-color: #8c76b9;
+
+
+.purple-button {
+    background-color: #8c76b9; /* Purple color for the button */
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
     font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Matching the font with the task list */
 }
 
-.submit-btn:hover {
-    background-color: #f57c00; /* Darker shade on hover */
+.purple-button:hover {
+    background-color: #765ca8; /* Darker shade on hover */
 }

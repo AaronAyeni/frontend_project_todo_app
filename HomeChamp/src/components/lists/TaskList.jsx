@@ -1,4 +1,5 @@
 import Task from "../Task"
+import '/src/styles/Lists/TaskList.css';
 
 const TaskList = ({taskData,updateStatus, deleteTask,patchTask,householdData}) => {
 
@@ -11,11 +12,11 @@ const TaskList = ({taskData,updateStatus, deleteTask,patchTask,householdData}) =
 
 
     return(
-        <>
+        <section id="tasksection" >
         {taskComponents}
         
+        </section>
         
-        </>
     )
 }
 

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import '/src/styles/AddTaskForm.css';
+
 import Task from "../Task";
 const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask,onFilterChange}) => {
 const [description,setDescription]  = useState("");
@@ -84,6 +86,7 @@ useEffect(
                     value={descriptionSearchTerm}
                     onChange={handleDescriptionFilterChange}
                     placeholder="Search description"
+                    className="input-field"
                 />
                  <label>Filter by Category:</label>
                 <input
@@ -91,6 +94,7 @@ useEffect(
                     value={categorySearchTerm}
                     onChange={handleCategoryFilterChange}
                     placeholder="Search category"
+                    className="input-field"
                 />
                 <label>Filter by Status:</label>
                 <input
@@ -98,6 +102,7 @@ useEffect(
                     value={statusSearchTerm}
                     onChange={handleStatusFilterChange}
                     placeholder="Search status"
+                    className="input-field"
                 />
                 <label>Filter by Household:</label>
                 <input
@@ -105,6 +110,7 @@ useEffect(
                     value={householdSearchTerm}
                     onChange={handleHouseholdFilterChange}
                     placeholder="Search household"
+                    className="input-field"
                 />
                 <label>Filter by Deadline:</label>
                 <input
@@ -112,6 +118,7 @@ useEffect(
                     value={dueDateSearchTerm}
                     onChange={handleDueDateFilterChange}
                     placeholder="YYYY-MM-DD"
+                    className="input-field"
                 />
                 <label>Filter by User</label>
                 <input
@@ -119,6 +126,7 @@ useEffect(
                     value={assignedUserSearchTerm}
                     onChange={handleUserFilterChange}
                     placeholder="Search by User"
+                    className="input-field"
                 />
             </div>
 
@@ -128,34 +136,34 @@ useEffect(
 
          <form onSubmit={handleSubmit}>
             <label> Description:</label>
-            <input type = "text"  onChange={(event) => setDescription(event.target.value)} placeholder="Enter name of description"></input>
+            <input type = "text"  onChange={(event) => setDescription(event.target.value)} placeholder="Enter name of description" className="input-field"></input>
             <label> Deadline:</label>
-            <input type = "date"  onChange={(event) => setDuedate(event.target.value)} placeholder="Enter name of date of format YYYY-MM-DD"></input>
+            <input type = "date"  onChange={(event) => setDuedate(event.target.value)} placeholder="Enter name of date of format YYYY-MM-DD" className="input-field"></input>
             <label> Category:</label>
-            <select defaultValue = "catergory" value = {category} onChange = {(event) => setCategory(event.target.value)}>
+            <select defaultValue = "catergory" value = {category} onChange = {(event) => setCategory(event.target.value)} className="select-field">
                 <option disabled-value = "select-catergory">Choose a Catergory</option>
                 {preferenceOptions}
             </select>
             <label> Household:</label>
-            <select defaultValue = "select-household" value = {householdId} onChange = {(event) => setHouseholdId(event.target.value)}>
+            <select defaultValue = "select-household" value = {householdId} onChange = {(event) => setHouseholdId(event.target.value)}  className="select-field">
                 <option disabled-value = "select-household">Choose a household</option>
                 {householdOptions}
             </select>
             <label> Status:</label>
-            <select defaultValue = "select-status" value = {status} onChange = {(event) => setStatus(event.target.value)}>
+            <select defaultValue = "select-status" value = {status} onChange = {(event) => setStatus(event.target.value)}  className="select-field">
                 <option disabled-value = "select-status">Choose a status</option>
                 <option value = {status}>NOT_STARTED</option>
                 <option value = {status}>IN_PROGRESS</option>
                 <option value = {status}>COMPLETED</option>
             </select>
             <label> Assign to:</label>
-            <select defaultValue = "select-user" onChange = {(event) => setUserId(event.target.value)}>
+            <select defaultValue = "select-user" onChange = {(event) => setUserId(event.target.value)} className="select-field">
                 <option disabled-value = "select-user">Choose a user</option>
                 { householdUsers.map((user) => {
         return <option key = {user.id} value = {user.id}>{user.name}</option>
     })}
             </select>
-            <input type="submit" value = "Add Task"/>
+            <input type="submit" value = "Add Task" className="purple-button"/>
           </form>
           </div>
 
