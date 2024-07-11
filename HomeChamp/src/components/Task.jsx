@@ -102,7 +102,7 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
 
     return(
-        <>
+      <article className="task-container">
 
         <div className="task-container">
       <div className="task-description">{task.description}</div>
@@ -137,7 +137,7 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
           </form>
       <button onClick={handleButtonClick}>Delete</button>
     </div>
-    </>
+    </article>
 
     )
 }
