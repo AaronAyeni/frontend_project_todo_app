@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import User from "../User";
+import '/src/styles/AddUserForm.css';
+
 
 const AddUserForm = ({userData, categoryData, householdData,postUser}) => {
 
@@ -40,8 +42,10 @@ const householdOptions = householdData.map((household) => {
 
     return(
         <>
-    
+        <h3>Add a User</h3>
+
     <div className="cream-box">
+
             <form onSubmit={handleSubmit}>
                 <label> Name:</label>
                 <input

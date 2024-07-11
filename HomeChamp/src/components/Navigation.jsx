@@ -6,7 +6,7 @@ const Navigation = () => {
     return (
         <>
             <header>
-                <h2>Home Champ</h2>
+                <h2>HomeChamp</h2>
                 <h3>Turning To-Do into To-Done</h3>
 
                 <nav className="navbar">

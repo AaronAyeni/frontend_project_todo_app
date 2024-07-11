@@ -21,9 +21,11 @@ const AddHouseholdForm = ({householdData, postHousehold}) => {
 
     return(
         <>
+                <h3>Add a Household</h3>
+
 <div className="cream-box"> {/* Apply CSS class for cream-colored box */}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="household-name">Name:</label>
+                <label htmlFor="household-name">Household Name:</label>
                 <input
                     type="text"
                     id="household-name"

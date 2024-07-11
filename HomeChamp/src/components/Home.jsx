@@ -1,3 +1,4 @@
+import '../styles/Home.css';
 
 const Home = () => {
 
@@ -6,17 +7,19 @@ const Home = () => {
     return (
 
         <>
-        <h3>About Us</h3>
-        <p>
-        Our front-end application represents a solution to household task management, offering users a streamlined platform to organise and assign tasks within their households. It enables users to create detailed task lists tailored to their specific needs and preferences, ensuring each member can contribute effectively. With a user-friendly interface designed for simplicity and accessibility across devices, the application fosters seamless collaboration between users.
+       <div className="lilac-box">
+        <h3>Turn your tasks into achievements.</h3>
+        <p>HomeChamp organises your household task management, allowing you to keep track of tasks within your household. So you can turn your to-do into to-done!  </p>
+            </div>
+
+            <div className="lilac-box2">
+            <h4> HomeChamps Features</h4>
+        <p>Build your own task list & organise them into multiple customisable categories.  </p>
+        <p>Track the tasks done by every household members and monitor their participation.  </p>
+        <p>Schedule your household tasks & set dates when they must be done.</p>
 
 
-
-
-
-
-
-            </p>
+            </div>
 
         </>
 

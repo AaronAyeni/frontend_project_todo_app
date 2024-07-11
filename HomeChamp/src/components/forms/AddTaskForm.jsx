@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Task from "../Task";
+import '/src/styles/AddTaskForm.css';
 
 
 const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask}) => {
@@ -67,9 +68,11 @@ useEffect(
     return(
 
         <>
+                <h3>Add a Task</h3>
+
           <div className="cream-box">
             <form onSubmit={handleSubmit}>
-                <label> Description:</label>
+                <label> Description of Task:</label>
                 <input
                     type="text"
                     onChange={(event) => setDescription(event.target.value)}
@@ -83,7 +86,7 @@ useEffect(
                     placeholder="Enter deadline (YYYY-MM-DD)"
                     className="input-field"
                 />
-                <label> Category:</label>
+                <label> Category of Task:</label>
                 <select
                     defaultValue="category"
                     value={category}

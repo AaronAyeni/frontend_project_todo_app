@@ -12,6 +12,11 @@ Footer {
     font-family: 'Poppins', sans-serif;
 } 
 
+h4{
+    color: #ffffff;
+    
+}
+
 .Footer-content {
     display: flex;
     justify-content: space-between;
@@ -20,6 +25,7 @@ Footer {
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    
 }
 
 .footer-links, .footer-contact {
@@ -37,7 +43,7 @@ Footer {
 
 .footer-links ul li a, .footer-contact ul li a {
     text-decoration: none;
-    color: #007bff;
+    color: rgb(86, 86, 203);
 }
 
 .footer-links ul li a:hover, .footer-contact ul li a:hover {
@@ -47,5 +53,5 @@ Footer {
 .footer-copy {
     text-align: center;
     margin-top: 20px;
-    color: #3e4348;
+    color: #ffffff;
 }
