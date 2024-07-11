@@ -3,12 +3,13 @@ import User from "../User";
 import '/src/styles/AddUserForm.css';
 
 
-const AddUserForm = ({userData, categoryData, householdData,postUser}) => {
+const AddUserForm = ({userData, categoryData, householdData,postUser, onFilterChange }) => {
 
 const [name,setName]  = useState("");
 const [age,setAge] = useState(0);
 const [preference,setPreference] = useState(null);
-const [householdId,setHouseholdId] = useState(null); 
+const [householdId,setHouseholdId] = useState(null);
+const [searchTerm, setSearchTerm] = useState(""); 
 
 
 
@@ -27,6 +28,11 @@ const handleSubmit = (event) => {
 
 }
 
+const handleFilterChange = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    onFilterChange(term);
+};
 
 const preferenceOptions = (categoryData.map((preference,i)=>{
     return <option key = {i}> {preference} </option>
@@ -37,15 +43,15 @@ const householdOptions = householdData.map((household) => {
     return <option key={household.id} value = {household.id}>{household.name}</option>
 });
 
-
-
-
     return(
         <>
+
         <h3>Add a User</h3>
 
     <div className="cream-box">
 
+
+     
             <form onSubmit={handleSubmit}>
                 <label> Name:</label>
                 <input
@@ -85,20 +91,21 @@ const householdOptions = householdData.map((household) => {
                     </option>
                     {householdOptions}
                 </select>
-                <input type="submit" value="Add User" className="submit-btn" />
-            </form>
-        </div>
-            
 
-        
-
-
-
-
-
+                <input type="submit" value = "Add User" className="submit-btn" />
+             </form>
+             <div>
+                <label>Filter by Name:</label>
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleFilterChange}
+                    placeholder="Search users"
+                />
+            </div>
 
         </>
-    )
-}
+    );
+};
 
 export default AddUserForm;

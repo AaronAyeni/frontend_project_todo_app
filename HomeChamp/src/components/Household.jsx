@@ -5,11 +5,6 @@ import '/src/styles/Household.css'
 const Household = ({ household }) => {
 
 
-  if(household.users == null){
-    console.log("no users found");
-  }
-
-  console.log(household);
   return (
     <div className="household-container">
       <div className="household-name">{household.name}</div>
@@ -22,6 +17,7 @@ const Household = ({ household }) => {
         </ul>
       </div>
     </div>
+
   );
 }
 export default Household;
