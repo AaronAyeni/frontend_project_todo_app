@@ -5,3 +5,11 @@
     padding: 20px;
     background-color: rgb(156, 156, 205);
 }
+
+#usersection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+}
