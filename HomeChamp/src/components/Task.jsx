@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
- 
+ console.log("this is task",task);
 
 
   
@@ -10,6 +10,8 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
     // const toggleStatus = () => { setStatus((prevStatus) => { switch (prevStatus) { case 'NOT_COMPLETED': return 'IN_PROGRESS'; case 'IN_PROGRESS': return 'COMPLETED'; case 'COMPLETED': default: return 'NOT_COMPLETED'; } });
   const [status,setStatus] = useState(null);
   const [userId,setUserId] = useState(null);
+
+  const [searchDescription,setSearchDescription] = useState("");
 
 
 
@@ -65,6 +67,7 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
   }
 
+ 
 
   const assignUserOptions = () => {
     console.log("this is householdId",householdId);
@@ -97,6 +100,8 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
     return(
         <>
         <h4>This is a task component</h4>
+      
+
         <ul>
           <li>{task.description}</li>
           <li>{task.household.name}</li>
