@@ -1,20 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Task = ({task,updateStatus, deleteTask}) => {
+const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
-  console.log(task);
+ 
+
 
   
    
     // const toggleStatus = () => { setStatus((prevStatus) => { switch (prevStatus) { case 'NOT_COMPLETED': return 'IN_PROGRESS'; case 'IN_PROGRESS': return 'COMPLETED'; case 'COMPLETED': default: return 'NOT_COMPLETED'; } });
   const [status,setStatus] = useState(null);
+  const [userId,setUserId] = useState(null);
+
+
 
   const description = task.description;
   const category = task.category;
   const dueDate = task.dueDate;
   const householdId = task.household.id;
   const id = task.id
-
+  
+  // const userId = task.user; //add the .id after
+  
 
   const handleButtonClick = () => {
     deleteTask(task)
@@ -24,10 +30,11 @@ const Task = ({task,updateStatus, deleteTask}) => {
     event.preventDefault()
     const newTask = {
       description,
-      category,
-      dueDate,
       householdId,
+      dueDate,
+      category,
       status,
+      userId,
       id
 
 
@@ -36,6 +43,55 @@ const Task = ({task,updateStatus, deleteTask}) => {
     updateStatus(newTask);
 
   }
+
+
+  const handleSubmitPatchTask = (event) => {
+    event.preventDefault();
+    const taskToPatch = {
+      description,
+      householdId,
+      dueDate,
+      category,
+      status,
+      userId,
+      id
+
+
+
+    }
+
+    patchTask(taskToPatch);
+
+
+  }
+
+
+  const assignUserOptions = () => {
+    console.log("this is householdId",householdId);
+    // console.log("this is household data in task component",householdData);
+    const houseHoldWeWant = householdData.find((household) => household.id === householdId);
+   //below is a guard clause so once we have the data itll will activate the true return which causes the re render.
+    if(houseHoldWeWant === undefined){
+      return <></>
+    }
+    
+    return houseHoldWeWant.users.map((user) => {
+      return <option key = {user.id} value = {user.id}>{user.name}</option>
+  })
+    
+  
+    
+   
+   
+  
+}
+
+
+// useEffect(
+
+//   assignUserOptions,[]
+// );
+
 
 
     return(
@@ -59,6 +115,21 @@ const Task = ({task,updateStatus, deleteTask}) => {
           </select>
           <input type="submit" value = "Choose status"/> 
           </form>
+
+
+          <form onSubmit={handleSubmitPatchTask}> 
+          <select onChange = {(event) => setUserId(event.target.value)}>
+          <option disabled-value = "select-user" value = {userId} >Choose a user to assign the task to</option>
+                <option>Choose a user</option>
+                {assignUserOptions()}
+                
+                
+          </select>
+          <input type="submit" value = "Choose status"/> 
+          </form>
+
+
+
           <button onClick={handleButtonClick}>Delete</button>
 
 

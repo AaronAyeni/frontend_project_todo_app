@@ -108,6 +108,23 @@ setTaskData([savedUserToTask,...taskData]);
 
 }
 
+const patchTask = async (taskToPatch) => {
+    const response = await fetch(`http://localhost:8080/tasks/assign-task-by-user/${taskToPatch.id}`,{
+    method : "PATCH",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+        assigningUserId : 9,
+        userReceivingTaskId : taskToPatch.userId
+    })
+})
+
+
+await fetchTaskData(); //dont add do  setHouseholdData([savedHousehold, ...householdData]); as this will cause keys to be copied so duplicates the task
+                    //just need to re render the task data for patch mappings/delete mappings as we're not adding anything new 
+
+
+
+}
 
 
 
@@ -187,13 +204,16 @@ const updateStatus = async (taskToUpdateStatus) => {
                 {
                     path: "/tasks",
                     element: <TaskContainer
-                    taskData = {taskData} 
+                    taskData = {taskData}
+                     
                     categoryData={categoryData} 
                     householdData={householdData} 
                     userData ={userData} 
                     postTask = {postTask}
+                    patchTask = {patchTask}
                     updateStatus = {updateStatus}
                     deleteTask ={deleteTask}
+                    
                         />
                 },
                 {
