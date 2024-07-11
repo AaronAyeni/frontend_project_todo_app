@@ -1,15 +1,16 @@
+import '/src/styles/User.css'
+
 const User = ({user}) => {
 
 
     return(
         <>
-        <h3>This is a user component</h3>
-        <ul>
-        <li>{user.name}</li>
-        <li>{user.age}</li>
-        <li>{user.preference}</li>
-        <li>{user.household.name}</li>
-        </ul>
+    <div className="user-container">
+      <div><strong>Name:</strong> {user.name}</div>
+      <div><strong>Age:</strong> {user.age}</div>
+      <div><strong>Preference:</strong> {user.preference}</div>
+      <div><strong>Household:</strong> {user.household.name}</div>
+    </div>
         </>
         
     )

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Task from "../Task";
 
+
 const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask}) => {
 
 
@@ -66,47 +67,78 @@ useEffect(
     return(
 
         <>
-        <h2>This is a task form</h2> 
-         <form onSubmit={handleSubmit}>
-            
-            <label> description:</label>
-
-            <input type = "text"  onChange={(event) => setDescription(event.target.value)} placeholder="Enter name of description"></input>
-            <label> deadline:</label>
-            <input type = "date"  onChange={(event) => setDuedate(event.target.value)} placeholder="Enter name of date of format YYYY-MM-DD"></input>
-            <label> category:</label>
-            <select defaultValue = "catergory" value = {category} onChange = {(event) => setCategory(event.target.value)}>
-                <option disabled-value = "select-catergory">Choose a Catergory</option>
-                {preferenceOptions}
-            </select>
-            <label> household:</label>
-            <select defaultValue = "select-household" value = {householdId} onChange = {(event) => setHouseholdId(event.target.value)}>
-                <option disabled-value = "select-household">Choose a household</option>
-                {householdOptions}
-            </select>
-            <label> status:</label>
-            <select defaultValue = "select-status" value = {status} onChange = {(event) => setStatus(event.target.value)}>
-                <option disabled-value = "select-status">Choose a status</option>
-                <option value = {status}>NOT_STARTED</option>
-                <option value = {status}>IN_PROGRESS</option>
-                <option value = {status}>COMPLETED</option>
-                
-            </select>
-            
-
-            <label> assign to:</label>
-            <select defaultValue = "select-user" onChange = {(event) => setUserId(event.target.value)}>
-                <option disabled-value = "select-user">Choose a user</option>
-                { householdUsers.map((user) => {
-        return <option key = {user.id} value = {user.id}>{user.name}</option>
-    })}
-            </select>
-
-
-           
-            <input type="submit" value = "Add Task"/> 
-
-          </form>
+          <div className="cream-box">
+            <form onSubmit={handleSubmit}>
+                <label> Description:</label>
+                <input
+                    type="text"
+                    onChange={(event) => setDescription(event.target.value)}
+                    placeholder="Enter description"
+                    className="input-field"
+                />
+                <label> Deadline:</label>
+                <input
+                    type="date"
+                    onChange={(event) => setDueDate(event.target.value)}
+                    placeholder="Enter deadline (YYYY-MM-DD)"
+                    className="input-field"
+                />
+                <label> Category:</label>
+                <select
+                    defaultValue="category"
+                    value={category}
+                    onChange={(event) => setCategory(event.target.value)}
+                    className="select-field"
+                >
+                    <option disabled value="select-category">
+                        Choose a Category
+                    </option>
+                    {preferenceOptions}
+                </select>
+                <label> Household:</label>
+                <select
+                    defaultValue="select-household"
+                    value={householdId}
+                    onChange={(event) => setHouseholdId(event.target.value)}
+                    className="select-field"
+                >
+                    <option disabled value="select-household">
+                        Choose a Household
+                    </option>
+                    {householdOptions}
+                </select>
+                <label> Status:</label>
+                <select
+                    defaultValue="select-status"
+                    value={status}
+                    onChange={(event) => setStatus(event.target.value)}
+                    className="select-field"
+                >
+                    <option disabled value="select-status">
+                        Choose a Status
+                    </option>
+                    <option value="NOT_STARTED">NOT_STARTED</option>
+                    <option value="IN_PROGRESS">IN_PROGRESS</option>
+                    <option value="COMPLETED">COMPLETED</option>
+                </select>
+                <label> Assign to:</label>
+                <select
+                    defaultValue="select-user"
+                    onChange={(event) => setUserId(event.target.value)}
+                    className="select-field"
+                >
+                    <option disabled value="select-user">
+                        Choose a User
+                    </option>
+                    {householdUsers.map((user) => (
+                        <option key={user.id} value={user.id}>
+                            {user.name}
+                        </option>
+                    ))}
+                </select>
+                <input type="submit" value="Add Task" className="submit-btn" />
+            </form>
+        </div>
         </>
     )
 }

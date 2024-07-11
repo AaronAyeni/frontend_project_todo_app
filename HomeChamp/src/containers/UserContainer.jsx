@@ -7,7 +7,6 @@ const UserContainer = ({userData, categoryData, householdData,postUser}) => {
     return(
         <>
 
-        <h2>This is UserContainer</h2>
         
         <AddUserForm userData={userData} categoryData ={categoryData} householdData={householdData} postUser = {postUser}></AddUserForm>
         <UserList userData ={userData}></UserList>

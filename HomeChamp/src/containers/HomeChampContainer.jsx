@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-d
 import UserList from "../components/lists/UserList";
 import Navigation from "../components/Navigation";
 import Home from "../components/Home";
+import Footer from "../components/Footer";
+
 
 
 
@@ -220,7 +222,7 @@ const updateStatus = async (taskToUpdateStatus) => {
         <>
   
         <RouterProvider router={homechampRoutes}/>
-
+        <Footer></Footer>
         </>
     )
 

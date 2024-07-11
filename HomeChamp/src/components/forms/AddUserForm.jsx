@@ -40,30 +40,50 @@ const householdOptions = householdData.map((household) => {
 
     return(
         <>
-        <h2>This is a user form </h2>
     
+    <div className="cream-box">
             <form onSubmit={handleSubmit}>
-            
-                <label> name:</label>
-                <input type = "text" id = "name"  onChange={(event) => setName(event.target.value)} placeholder="Enter name of user"></input>
-                <label>age:</label>
-                <input type = "number" id = "age" onChange={(event) => setAge(event.target.value)}  placeholder="Enter age of user"></input>
-                <label>preferences</label>
-                <select defaultValue = "select-preference" onChange = {(event) => setPreference(event.target.value)}>
-                    <option disabled-value = "select-preference">Choose a preference</option>
+                <label> Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    onChange={(event) => setName(event.target.value)}
+                    placeholder="Enter name of user"
+                    className="input-field"
+                />
+                <label> Age:</label>
+                <input
+                    type="number"
+                    id="age"
+                    onChange={(event) => setAge(event.target.value)}
+                    placeholder="Enter age of user"
+                    className="input-field"
+                />
+                <label> Preferences:</label>
+                <select
+                    defaultValue="select-preference"
+                    onChange={(event) => setPreference(event.target.value)}
+                    className="select-field"
+                >
+                    <option disabled value="select-preference">
+                        Choose a preference
+                    </option>
                     {preferenceOptions}
                 </select>
-                <select defaultValue = "select-household" onChange = {(event) => setHouseholdId(event.target.value)}>
-                    <option disabled-value = "select-household">Choose a household</option>
+                <label> Household:</label>
+                <select
+                    defaultValue="select-household"
+                    onChange={(event) => setHouseholdId(event.target.value)}
+                    className="select-field"
+                >
+                    <option disabled value="select-household">
+                        Choose a household
+                    </option>
                     {householdOptions}
                 </select>
-                <input type="submit" value = "Add User"/>
-
-             </form>
-
-           
-        
-
+                <input type="submit" value="Add User" className="submit-btn" />
+            </form>
+        </div>
             
 
         

@@ -17,7 +17,6 @@ const householdComponents = householdData.map( (household) => {
 
     return(
         <>
-        <h2>This is household list</h2>
         {householdComponents}
         
         </>

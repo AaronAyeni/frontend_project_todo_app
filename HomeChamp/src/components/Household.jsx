@@ -1,4 +1,7 @@
 import React from 'react';
+
+import '/src/styles/Household.css'
+
 const Household = ({ household }) => {
 
 
@@ -8,17 +11,19 @@ const Household = ({ household }) => {
 
   console.log(household);
   return (
-    <>
-      <h4>This is a household component</h4>
-      <ul>
-        <li>{household.name}</li>
-        <p>Users in this household</p>
-        <li>{household.users.map( (user) => {return user.name + " "})}</li>
-      </ul>
-    </>
+    <div className="household-container">
+      <div className="household-name">{household.name}</div>
+      <div className="users-section">
+        <p><strong>Users in this household:</strong></p>
+        <ul>
+          {household.users && household.users.map((user, index) => (
+            <li key={index}>{user.name}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
-
 export default Household;
 
 

@@ -1,5 +1,7 @@
 import User from "../User"
 
+
+
 const UserList = ({userData}) => {
 
 const userComponents = userData.map( (user) => {
@@ -12,7 +14,6 @@ const userComponents = userData.map( (user) => {
         return(
         <>
 
-                <h2>This is the UserList</h2>
                 {userComponents}
 
         </>

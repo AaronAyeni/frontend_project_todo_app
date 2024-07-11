@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Household from "../Household";
+import '../../styles/AddHouseholdForm.css';
 
 const AddHouseholdForm = ({householdData, postHousehold}) => {
 
@@ -20,14 +21,21 @@ const AddHouseholdForm = ({householdData, postHousehold}) => {
 
     return(
         <>
-         <h2>This is a household form</h2>
+<div className="cream-box"> {/* Apply CSS class for cream-colored box */}
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="household-name">Name:</label>
+                <input
+                    type="text"
+                    id="household-name"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    placeholder="Enter name of household"
+                    className="input-field" // Apply CSS class for input field styling
+                />
+                <input type="submit" value="Add household" className="submit-btn" /> {/* Apply CSS class for submit button styling */}
+            </form>
+        </div>
 
-         <form onSubmit={handleSubmit}>
-         <label> name:</label>
-         <input type = "text"  value = {name} onChange={(event) => setName(event.target.value)} placeholder="Enter name of household"></input>
-         <input type="submit" value = "Add household"/>
-         </form>
-        
         </>
        
         

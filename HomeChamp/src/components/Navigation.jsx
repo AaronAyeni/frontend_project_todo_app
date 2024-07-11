@@ -1,18 +1,30 @@
 import { Link, Outlet } from "react-router-dom";
+import '../styles/Navigation.css';
+
+
 const Navigation = () => {
     return (
         <>
             <header>
-                <h2>HomeChamp NavBar</h2>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/users">All users</Link></li>
-                        <li><Link to="/households">Add households</Link></li>
-                        <li><Link to="/tasks">Add tasks</Link></li>
+                <h2>Home Champ</h2>
+                <h3>Turning To-Do into To-Done</h3>
 
-                    </ul>
-                </nav>
+                <nav className="navbar">
+          <ul className="nav-links">
+              <li className="nav-item">
+                  <Link to="/" className="nav-link">Home</Link>
+              </li>
+              <li className="nav-item">
+                  <Link to="/users" className="nav-link">Users</Link>
+              </li>
+              <li className="nav-item">
+                  <Link to="/tasks" className="nav-link">Tasks</Link>
+              </li>
+              <li className="nav-item">
+                  <Link to="/households" className="nav-link">Households</Link>
+              </li>
+          </ul>
+      </nav>
             </header>
             <main>
                 <Outlet/>
