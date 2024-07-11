@@ -77,58 +77,7 @@ useEffect(
 );
     return(
         <>
-                <h3>Filter a Task</h3>
-
-            <div className="cream-box">
-                <label>Filter by Description:</label>
-                <input
-                    type="text"
-                    value={descriptionSearchTerm}
-                    onChange={handleDescriptionFilterChange}
-                    placeholder="Search description"
-                    className="input-field"
-                />
-                 <label>Filter by Category:</label>
-                <input
-                    type="text"
-                    value={categorySearchTerm}
-                    onChange={handleCategoryFilterChange}
-                    placeholder="Search category"
-                    className="input-field"
-                />
-                <label>Filter by Status:</label>
-                <input
-                    type="text"
-                    value={statusSearchTerm}
-                    onChange={handleStatusFilterChange}
-                    placeholder="Search status"
-                    className="input-field"
-                />
-                <label>Filter by Household:</label>
-                <input
-                    type="text"
-                    value={householdSearchTerm}
-                    onChange={handleHouseholdFilterChange}
-                    placeholder="Search household"
-                    className="input-field"
-                />
-                <label>Filter by Deadline:</label>
-                <input
-                    type="text"
-                    value={dueDateSearchTerm}
-                    onChange={handleDueDateFilterChange}
-                    placeholder="YYYY-MM-DD"
-                    className="input-field"
-                />
-                <label>Filter by User</label>
-                <input
-                    type="text"
-                    value={assignedUserSearchTerm}
-                    onChange={handleUserFilterChange}
-                    placeholder="Search by User"
-                    className="input-field"
-                />
-            </div>
+               
 
             <h3>Add a Task</h3>
 
@@ -166,6 +115,60 @@ useEffect(
             <input type="submit" value = "Add Task" className="purple-button"/>
           </form>
           </div>
+
+
+          <h3>Filter a Task</h3>
+
+<div className="cream-box">
+    <label>Filter by Description:</label>
+    <input
+        type="text"
+        value={descriptionSearchTerm}
+        onChange={handleDescriptionFilterChange}
+        placeholder="Search description"
+        className="input-field"
+    />
+     <label>Filter by Category:</label>
+    <input
+        type="text"
+        value={categorySearchTerm}
+        onChange={handleCategoryFilterChange}
+        placeholder="Search category"
+        className="input-field"
+    />
+    <label>Filter by Status:</label>
+    <input
+        type="text"
+        value={statusSearchTerm}
+        onChange={handleStatusFilterChange}
+        placeholder="Search status"
+        className="input-field"
+    />
+    <label>Filter by Household:</label>
+    <input
+        type="text"
+        value={householdSearchTerm}
+        onChange={handleHouseholdFilterChange}
+        placeholder="Search household"
+        className="input-field"
+    />
+    <label>Filter by Deadline:</label>
+    <input
+        type="text"
+        value={dueDateSearchTerm}
+        onChange={handleDueDateFilterChange}
+        placeholder="YYYY-MM-DD"
+        className="input-field"
+    />
+    <label>Filter by User</label>
+    <input
+        type="text"
+        value={assignedUserSearchTerm}
+        onChange={handleUserFilterChange}
+        placeholder="Search by User"
+        className="input-field"
+    />
+</div>
 
         </>
     )
