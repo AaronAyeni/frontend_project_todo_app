@@ -1,20 +1,20 @@
 .cream-box {
-    background-color: #9ecbe1; /* Cream color background */
+    background-color: #9ecbe1; 
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Drop shadow for depth */
-    font-family: 'Poppins', sans-serif; /* Poppins font */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif; 
     font-weight: bold;
     font-size: 18px;
     line-height: 1.5;
-    max-width: 400px; /* Optional: Adjust width as needed */
-    margin: 0 auto; /* Center align horizontally */
+    max-width: 400px; 
+    margin: 0 auto; 
 }
 
 .cream-box label {
     display: block;
     margin-bottom: 8px;
-    font-size: 16px; /* Adjust label font size */
+    font-size: 16px; 
 }
 
 .input-field,
@@ -24,22 +24,22 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 14px; /* Adjust input field font size */
+    font-size: 14px; 
 }
 
 
 
 .purple-button {
-    background-color: #8c76b9; /* Purple color for the button */
+    background-color: #8c76b9; 
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif; /* Matching the font with the task list */
+    font-family: 'Poppins', sans-serif; 
 }
 
 .purple-button:hover {
-    background-color: #765ca8; /* Darker shade on hover */
+    background-color: #765ca8; 
 }

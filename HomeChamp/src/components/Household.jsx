@@ -6,6 +6,7 @@ const Household = ({ household }) => {
 
 
   return (
+    <article className ='household-container-article'>
     <div className="household-container">
       <div className="household-name">{household.name}</div>
       <div className="users-section">
@@ -17,6 +18,7 @@ const Household = ({ household }) => {
         </ul>
       </div>
     </div>
+    </article>
 
   );
 }
