@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Task from "../Task";
 
-const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask}) => {
+const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask,onFilterChange}) => {
 
 
 const [description,setDescription]  = useState("");
@@ -13,6 +13,12 @@ const [userId,setUserId] = useState(null);
 
 const [householdUsers, setHouseholdUsers] = useState([]);
 
+const [descriptionSearchTerm,setDescriptionSeachTerm] = useState("");
+const [categorySearchTerm,setCategorySeachTerm] = useState("");
+const [statusSearchTerm,setStatusSearchTerm] = useState("");
+const [householdSearchTerm,setHouseholdSearchTerm] = useState("");
+const [dueDateSearchTerm,setDueDateSearchTerm] = useState(null);
+const [assignedUserSearchTerm,setAssignedUserSearchTerm] = useState("");
 
 
 const handleSubmit = (event) => {
@@ -42,6 +48,51 @@ const householdOptions = householdData.map((household) => {
 });
 
 
+const handleDescriptionFilterChange = (event) => {
+    const term = event.target.value.toLowerCase();
+    setDescriptionSeachTerm(term);
+    onFilterChange(term,"description");
+
+};
+
+const handleCategoryFilterChange = (event) => {
+    const term = event.target.value.toLowerCase();
+    setCategorySeachTerm(term);
+    onFilterChange(term,"category");
+
+}
+
+const handleStatusFilterChange = (event) => {
+    const term = event.target.value.toLowerCase();
+    setStatusSearchTerm(term);
+    onFilterChange(term,"status");
+
+}
+
+const handleHouseholdFilterChange = (event) => {
+    const term = event.target.value.toLowerCase();
+    setHouseholdSearchTerm(term);
+    onFilterChange(term,"household")
+
+
+}
+
+const handleDueDateFilterChange = (event) => {
+    const term = event.target.value;
+    setDueDateSearchTerm(term);
+    onFilterChange(term,"dueDate")
+
+
+}
+
+const handleUserFilterChange = (event) => {
+    const term = event.target.value;
+    setAssignedUserSearchTerm(term);
+    onFilterChange(term,"user")
+
+
+}
+
 
 
 
@@ -66,11 +117,63 @@ useEffect(
     return(
 
         <>
+
+            <div>
+                <label>Filter by Description:</label>
+                <input
+                    type="text"
+                    value={descriptionSearchTerm}
+                    onChange={handleDescriptionFilterChange}
+                    placeholder="Search desciption"
+                />
+                 <label>Filter by Category:</label>
+                <input
+                    type="text"
+                    value={categorySearchTerm}
+                    onChange={handleCategoryFilterChange}
+                    placeholder="Search category"
+                />
+                <label>Filter by Status:</label>
+                <input
+                    type="text"
+                    value={statusSearchTerm}
+                    onChange={handleStatusFilterChange}
+                    placeholder="Search status"
+                />
+                <label>Filter by Household:</label>
+                <input
+                    type="text"
+                    value={householdSearchTerm}
+                    onChange={handleHouseholdFilterChange}
+                    placeholder="Search household"
+                />
+                <label>Filter by Deadline:</label>
+                <input
+                    type="text"
+                    value={dueDateSearchTerm}
+                    onChange={handleDueDateFilterChange}
+                    placeholder="Search by deadline"
+                />
+                <label>Filter by User</label>
+                <input
+                    type="text"
+                    value={assignedUserSearchTerm}
+                    onChange={handleUserFilterChange}
+                    placeholder="Search by User"
+                />
+
+
+            </div>
+
+
+
         <h2>This is a task form</h2> 
+
+
          <form onSubmit={handleSubmit}>
             
-            <label> description:</label>
 
+            <label> description:</label>
             <input type = "text"  onChange={(event) => setDescription(event.target.value)} placeholder="Enter name of description"></input>
             <label> deadline:</label>
             <input type = "date"  onChange={(event) => setDuedate(event.target.value)} placeholder="Enter name of date of format YYYY-MM-DD"></input>
