@@ -4,7 +4,7 @@ const User = ({user}) => {
 
 
     return(
-        <>
+        <article className="user-container-article">
 
     <div className="user-container">
       <div><strong>Name:</strong> {user.name}</div>
@@ -13,7 +13,7 @@ const User = ({user}) => {
       <div><strong>Household:</strong> {user.household.name}</div>
     </div>
 
-        </>
+        </article>
         
     )
 }

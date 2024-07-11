@@ -1,5 +1,5 @@
 import User from "../User"
-
+import '/src/styles/UserList.css';
 
 
 const UserList = ({userData}) => {
@@ -12,11 +12,11 @@ const userComponents = userData.map( (user) => {
 
 )
         return(
-        <>
+        <section id="usersection">
 
                 {userComponents}
 
-        </>
+        </section>
 )
 
 }

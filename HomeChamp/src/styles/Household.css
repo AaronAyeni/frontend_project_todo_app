@@ -1,8 +1,10 @@
 .household-container {
-    background-color: #f0f0f0; /* Light background color for the container */
+    background-color: #f0f0f0; 
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+
+ 
   }
   
   .household-name {
@@ -20,10 +22,18 @@
   }
   
   .users-section ul {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     padding: 0;
   }
   
   .users-section li {
     margin-bottom: 5px;
+  }
+
+  .household-container-article{
+    grid-gap: 2mm;
+    padding: 10px;
+    margin: 0 auto; 
+    max-width: 800px;
+  
   }
