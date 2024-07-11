@@ -1,10 +1,18 @@
 .task-container {
-    background-color: #f0f0f0; /* Light background color for the task container */
+    background-color: #f0f0f0; 
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
   }
   
+  .task-container {
+    grid-gap: 2mm;
+    padding: 10px;
+    margin: 0 auto; 
+    max-width: 800px; 
+}
+
+
   .task-description {
     font-size: 18px;
     font-weight: bold;

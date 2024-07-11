@@ -1,40 +1,41 @@
 .lilac-box {
     background-color: rgb(156, 156, 205); 
-    padding: 20px; /* Padding for spacing inside the box */
-    color: white; /* White text color */
-    border-radius: 8px; /* Optional: Add rounded corners to the box */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for depth */
-    text-align: center; /* Center align text */
+    padding: 20px; 
+    color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+
 }
 
 .lilac-box2 {
-    background-color: rgb(168, 168, 200); /* Lilac background color */
-    padding: 20px; /* Padding for spacing inside the box */
-    color: white; /* White text color */
-    border-radius: 8px; /* Optional: Add rounded corners to the box */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for depth */
-    text-align: center; /* Center align text */
-    margin: 0 auto; /* Center the box horizontally */
+    background-color: rgb(168, 168, 200); 
+    padding: 20px; 
+    color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    margin: 0 auto; 
     width: 30%;
-    margin-top: 20px; /* Adds space above this div */
+    margin-top: 20px; 
 
 }
 
 
 .lilac-box h3 {
-    margin-top: 0; /* Remove default margin for h3 */
+    margin-top: 0; 
 }
 
 .lilac-box p {
-    font-size: 18px; /* Larger font size for paragraph text */
-    line-height: 1.6; /* Adjust line height for better readability */
-    max-width: 100%; /* Ensure paragraph takes up full width of its container */
-    margin-bottom: 0; /* Remove default bottom margin for p */
+    font-size: 18px;
+    line-height: 1.6; 
+    max-width: 100%; 
+    margin-bottom: 0; 
 }
 
 
 .about-text {
-    flex: 1; /* Take remaining space */
-    padding-right: 20px; /* Space between text and image */
+    flex: 1; 
+    padding-right: 20px; 
 }
 

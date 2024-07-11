@@ -48,8 +48,8 @@ nav {
 
 .no-bullets {
     list-style-type: none;
-    padding: 0; /* Optional: Remove default padding */
-    margin: 0; /* Optional: Remove default margin */
+    padding: 0; 
+    margin: 0; 
 }
 
 .nav-links li {

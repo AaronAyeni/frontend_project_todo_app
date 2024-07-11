@@ -1,21 +1,21 @@
 .cream-box {
-    background-color: hsl(97, 43%, 88%); /* Cream color background */
+    background-color: hsl(97, 43%, 88%); 
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Drop shadow for depth */
-    font-family: 'Poppins', sans-serif; /* Poppins font */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    font-family: 'Poppins', sans-serif; 
     font-weight: bold;
     font-size: 18px;
     line-height: 1.5;
-    max-width: 500px; /* Optional: Adjust width as needed */
-    margin: 0 auto; /* Center align horizontally */
+    max-width: 500px; 
+    margin: 0 auto; 
 }
 
 
 .cream-box label {
     display: block;
     margin-bottom: 8px;
-    font-size: 16px; /* Adjust label font size */
+    font-size: 16px; 
 }
 
 .input-field,
@@ -25,7 +25,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 14px; /* Adjust input field font size */
+    font-size: 14px; 
 }
 
 .submit-btn {
@@ -39,5 +39,5 @@
 }
 
 .submit-btn:hover {
-    background-color: #f57c00; /* Darker shade on hover */
+    background-color: #f57c00; 
 }
