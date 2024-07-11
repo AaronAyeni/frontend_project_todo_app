@@ -122,7 +122,7 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
         <input type="submit" value="Choose status" />
       </form>
       
-          </form>
+        
 
 
           <form onSubmit={handleSubmitPatchTask}> 
