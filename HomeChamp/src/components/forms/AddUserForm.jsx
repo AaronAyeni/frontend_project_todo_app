@@ -48,8 +48,7 @@ const householdOptions = householdData.map((household) => {
 
         <h3>Add a User</h3>
 
-    <div className="cream-box">
-
+            <div className="cream-box">
 
      
             <form onSubmit={handleSubmit}>
@@ -103,8 +102,10 @@ const householdOptions = householdData.map((household) => {
                     placeholder="Search users"
                 />
             </div>
-
+            </div>
         </>
+
+
     );
 };
 
