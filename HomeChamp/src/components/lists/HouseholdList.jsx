@@ -10,7 +10,9 @@ const householdComponents = householdData.map( (household) => {
 
     return(
         <>
+
         {householdComponents} 
+
         </>
     )
 }

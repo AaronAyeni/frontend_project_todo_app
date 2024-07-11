@@ -55,9 +55,9 @@ const TaskContainer = ({taskData, categoryData,householdData,userData,postTask,u
 
     return(
         <>
-        <h2>This is TaskContainer</h2>
         <AddTaskForm categoryData={categoryData} householdData = {householdData} userData ={userData} postTask = {postTask} onFilterChange ={onTaskFilterChange}></AddTaskForm>
         <TaskList taskData={filteredTasks} updateStatus = {updateStatus} deleteTask ={deleteTask} patchTask = {patchTask} householdData = {householdData}></TaskList>
+
         </>
     )
 }

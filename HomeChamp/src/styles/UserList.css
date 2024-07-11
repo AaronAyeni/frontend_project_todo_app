@@ -1,0 +1,7 @@
+.UserList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(156, 156, 205);
+}

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
+
+import '/src/styles/Task.css'
+
 const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
  console.log("this is task",task);
+
 
 
   
@@ -99,26 +103,25 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
     return(
         <>
-        <h4>This is a task component</h4>
-      
 
-        <ul>
-          <li>{task.description}</li>
-          <li>{task.household.name}</li>
-          <li>{task.dueDate}</li>
-          <li>{task.category}</li>
-          <li>{task.status}</li>
-          <li>{task.user == null ? "no user associated with task" : task.user.name} </li>  
-          
-          <form onSubmit={handleSubmit}> 
-          <select onChange = {(event) => setStatus(event.target.value)}>
-          <option disabled-value = "select-status" value = {status} >Choose a status</option>
-                <option>NOT_STARTED</option>
-                <option>IN_PROGRESS</option>
-                <option>COMPLETED</option>
-                
-          </select>
-          <input type="submit" value = "Choose status"/> 
+        <div className="task-container">
+      <div className="task-description">{task.description}</div>
+      <div><strong>Household:</strong> {task.household.name}</div>
+      <div><strong>Due Date:</strong> {task.dueDate}</div>
+      <div><strong>Category:</strong> {task.category}</div>
+      <div><strong>Status:</strong> {task.status}</div>
+      <div><strong>User:</strong> {task.user ? task.user.name : "No user associated with task"}</div>
+      
+      <form onSubmit={handleSubmit}>
+        <select onChange={(event) => setStatus(event.target.value)}>
+          <option disabled value="select-status">Choose a status</option>
+          <option>NOT_STARTED</option>
+          <option>IN_PROGRESS</option>
+          <option>COMPLETED</option>
+        </select>
+        <input type="submit" value="Choose status" />
+      </form>
+      
           </form>
 
 
@@ -132,14 +135,10 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
           </select>
           <input type="submit" value = "Choose status"/> 
           </form>
+      <button onClick={handleButtonClick}>Delete</button>
+    </div>
+    </>
 
-
-
-          <button onClick={handleButtonClick}>Delete</button>
-
-
-        </ul>
-        </>
     )
 }
 

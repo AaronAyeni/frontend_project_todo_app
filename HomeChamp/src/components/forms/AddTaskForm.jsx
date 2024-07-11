@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Task from "../Task";
+import '/src/styles/AddTaskForm.css';
+
 
 const AddTaskForm = ({taskData, categoryData,householdData,userData,postTask,onFilterChange}) => {
 
@@ -118,6 +120,7 @@ useEffect(
 
         <>
 
+
             <div>
                 <label>Filter by Description:</label>
                 <input
@@ -210,6 +213,7 @@ useEffect(
             <input type="submit" value = "Add Task"/> 
 
           </form>
+
         </>
     )
 }

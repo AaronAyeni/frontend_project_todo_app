@@ -21,8 +21,10 @@ const HouseHoldContainer = ({householdData, postHousehold}) => {
     return(
 
         <>
+
        <AddHouseholdForm householdData={householdData} postHousehold ={postHousehold} onFilterChange={handleFilterChange} ></AddHouseholdForm>
        <HouseholdList householdData={filteredHouseholds}></HouseholdList>
+
         </>
         
     )

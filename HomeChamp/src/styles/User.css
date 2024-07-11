@@ -1,0 +1,14 @@
+.user-container {
+    background-color: #f0f0f0; /* Light background color for the user container */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .user-container > div {
+    margin-bottom: 5px;
+  }
+
+  .user-container strong {
+    font-weight: bold;
+  }

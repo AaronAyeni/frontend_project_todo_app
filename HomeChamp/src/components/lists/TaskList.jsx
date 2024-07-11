@@ -12,7 +12,6 @@ const TaskList = ({taskData,updateStatus, deleteTask,patchTask,householdData}) =
 
     return(
         <>
-        <h2>This is a task list</h2>
         {taskComponents}
         
         

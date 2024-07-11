@@ -1,0 +1,43 @@
+.task-container {
+    background-color: #f0f0f0; /* Light background color for the task container */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .task-description {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .task-container > div {
+    margin-bottom: 5px;
+  }
+  
+  .task-container form {
+    margin-top: 10px;
+  }
+  
+  .task-container select {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .task-container input[type="submit"],
+  .task-container button {
+    background-color: #8c76b9;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .task-container input[type="submit"]:hover,
+  .task-container button:hover {
+    background-color: #f57c00;
+  }
+  
