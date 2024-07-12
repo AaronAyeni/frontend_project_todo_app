@@ -135,9 +135,10 @@ const deleteTask = async (taskToDelete) => {
     const response = await fetch(`http://localhost:8080/tasks/delete-task/${taskToDelete.id}`,{
         method : "DELETE",
         headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-            userId : 9
-        })
+        // body: JSON.stringify({
+        //     userId : 9
+        // })
+
     })
     console.log(response);
     console.log("delete request")
