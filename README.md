@@ -2,6 +2,7 @@
 
 The frontend of https://github.com/thomaspeace/backend_project_todo_app
 
+![Screenshot 2024-07-11 at 16 45 59](https://github.com/user-attachments/assets/0e2cd94d-0a4c-4f6c-8950-4377a0b4f3d0)
 
 
 ## Project Aims
