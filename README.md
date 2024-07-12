@@ -59,6 +59,7 @@ Households:
 * [ ] Tracking/point system (scores)
 * [ ] Summarise household tasks per user
 * [ ] Setting recurrent tasks
+* [ ] Can delete household from household list
 
 
 
