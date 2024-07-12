@@ -31,7 +31,7 @@ Tasks:
 Households:
 * [x] Admin can view Households
 
-![MVP wireframe](Diagrams/MVPWireframe.png)
+![MVP wireframe](Diagrams/MVPWireframe2.png)
 
 
 ## Extensions
@@ -47,7 +47,7 @@ Tasks:
 Households:
 * [x]  Admin can search in the Households list
 
-![Extension wireframe](Diagrams/ExtensionsWireframe.png)
+![Extension wireframe](Diagrams/ExtensionsWireframe2.png)
 
 
 
@@ -74,7 +74,7 @@ Households:
 2. Navigate to the project directory:
 
     ```bash
-    cd frontent-todo-app
+    cd HomeChamp
     ```
 
 3. Install the dependencies:
