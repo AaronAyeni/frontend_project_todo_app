@@ -60,6 +60,7 @@ Households:
 * [ ] Summarise household tasks per user
 * [ ] Setting recurrent tasks
 * [ ] Can delete household from household list
+* [ ] Login feature for different users so only some users can add/delete tasks
 
 
 
