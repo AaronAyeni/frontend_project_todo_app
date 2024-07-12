@@ -20,11 +20,8 @@ const UserContainer = ({userData, categoryData, householdData,postUser}) => {
 
     return(
         <>
-
         <AddUserForm userData={userData} categoryData ={categoryData} householdData={householdData} postUser = {postUser} onFilterChange={handleFilterChange}></AddUserForm>
         <UserList userData ={filteredUsers}></UserList>
-
-
 
         </>
     )
