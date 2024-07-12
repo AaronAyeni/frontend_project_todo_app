@@ -14,7 +14,7 @@ Our project aim is to create a client-side interactive application to organise y
 ### Initial Approach
 
 Planning:
-* [x] Create trello board to track tasks to do, completed tasks and log errors https://trello.com/b/pIYj6Las/frontend-project
+* [x] Create Trello board to track tasks to do, completed tasks, and log errors [Trello Board](https://trello.com/b/pIYj6Las/frontend-project)
 * [x] Create wireframe
 * [x] Create component diagram
 
@@ -25,11 +25,12 @@ Users:
 Tasks:
 * [x] Admin can view task list
 * [x] Admin can enter new task details
-* [x] Admin can select category of progress for each task
-* [x] Admin delete tasks
+* [x] Admin can select status for each task
+* [x] Admin delete tasks from task list
 
 Households:
 * [x] Admin can view Households
+* [x] Admin can add a Households
 
 ![MVP wireframe](Diagrams/MVPWireframe2.png)
 
@@ -40,9 +41,11 @@ Households:
 
 Users:
 * [x] Admin can search in the user list
+* [x] Admin can remove user from a household
 
 Tasks:
 * [x] Admin can search in the task list
+* [x] Admin can assign task to user
 
 Households:
 * [x]  Admin can search in the Households list
