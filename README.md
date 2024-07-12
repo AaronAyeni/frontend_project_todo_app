@@ -111,6 +111,7 @@ https://reactrouter.com/en/main
 https://nodejs.org/en
 https://react.dev/
 https://vitejs.dev/
+https://excalidraw.com/
 
 
 ## Licenses
