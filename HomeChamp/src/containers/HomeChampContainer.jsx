@@ -138,8 +138,6 @@ const deleteTask = async (taskToDelete) => {
         body: JSON.stringify({
             userId : 9
         })
-
-
     })
     console.log(response);
     console.log("delete request")
@@ -231,12 +229,6 @@ const updateStatus = async (taskToUpdateStatus) => {
         }
         
     ])
-
-
-    
-
-    
-
 
 
     return(

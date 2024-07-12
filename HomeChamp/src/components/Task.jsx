@@ -6,11 +6,7 @@ import '/src/styles/Task.css'
 const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
 
  console.log("this is task",task);
-
-
-
-  
-   
+ 
    
   const [status,setStatus] = useState(null);
   const [userId,setUserId] = useState(null);
@@ -86,15 +82,8 @@ const Task = ({task,updateStatus, deleteTask,patchTask, householdData}) => {
   })
     
   
-    
-   
-   
   
 }
-
-
-
-
 
     return(
       <article className="task-container">
