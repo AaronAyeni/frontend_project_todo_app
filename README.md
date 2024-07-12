@@ -84,6 +84,11 @@ Households:
     npm install
     npm i react-router-dom
     ```
+4. Create the database:
+
+    ```bash
+    createdb todo_list
+    ```
 
 
 
