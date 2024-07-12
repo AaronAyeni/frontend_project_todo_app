@@ -20,18 +20,18 @@ Planning:
 * [x] Create component diagram
 
 Users:
-* [x] Admin can view user list
-* [x] Admin can enter new user details
+* [x] Can view user list
+* [x] Can enter new user details
 
 Tasks:
-* [x] Admin can view task list
-* [x] Admin can enter new task details
-* [x] Admin can select status for each task
-* [x] Admin delete tasks from task list
+* [x] Can view task list
+* [x] Can enter new task details (the admin user is the assigner in all cases)
+* [x] Can select status for each task
+* [x] Can delete tasks from task list
 
 Households:
-* [x] Admin can view Households
-* [x] Admin can add a Households
+* [x] Can view all households
+* [x] Can add a household
 
 ![MVP wireframe](Diagrams/MVPWireframe2.png)
 
@@ -41,15 +41,14 @@ Households:
 ### Initial Approach
 
 Users:
-* [x] Admin can search in the user list
-* [x] Admin can remove user from a household
+* [x] Can search in the user list to filter by a user
 
 Tasks:
-* [x] Admin can search in the task list
-* [x] Admin can assign task to user
+* [x] Can filter the task list by description, category, deadline, user assigned to task, household and status
+* [x] Can change the user assigned to a task
 
 Households:
-* [x]  Admin can search in the Households list
+* [x] Can filter the household list by household name
 
 ![Extension wireframe](Diagrams/ExtensionsWireframe2.png)
 
@@ -57,8 +56,6 @@ Households:
 
 ### Further Extensions for the Future
 
-* [ ] Add categories and deadline
-* [ ] Add a calendar
 * [ ] Tracking/point system (scores)
 * [ ] Summarise household tasks per user
 * [ ] Setting recurrent tasks
