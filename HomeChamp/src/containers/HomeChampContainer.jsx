@@ -61,6 +61,7 @@ const postUser = async (newUser) => {
 })
     const savedUser = await response.json();
     console.log(savedUser);
+    fetchHouseholdData();
     setUserData([savedUser, ...userData]);
 
 };
